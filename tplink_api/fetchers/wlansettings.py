@@ -36,8 +36,11 @@ class WLANSettings(Fetcher):
         
     @staticmethod
     def _sync(router: RouterInterface, masterChannel: str, page: int) -> dict:
-            
-        router.page("WlanNetworkRpm.htm?ssid1=ColgateDeEsta&ssid2=TP-LINK_GUEST_DC74&ssid3=TP-LINK_DC74_3&ssid4=TP-LINK_DC74_4&region=101&band=0&mode=5&chanWidth=2&channel="+masterChannel+"&rate=71&ap=1&broadcast=2&wdsbrl=2&brlssid=ColgateDeEsta&brlbssid=68-02-B8-2C-F1-E6&addrType=1&keytype=4&wepindex=1&authtype=1&keytext=YDeEstaTambien1807&Save=Save", params={"Page": page})
+    
+        MASTER_SSID_PASSWORD = os.getenv("MASTER_SSID_PASSWORD")
+        MASTER_SSID = os.getenv("MASTER_SSID")
+        
+        router.page("WlanNetworkRpm.htm?ssid1=ColgateDeEsta&ssid2=TP-LINK_GUEST_DC74&ssid3=TP-LINK_DC74_3&ssid4=TP-LINK_DC74_4&region=101&band=0&mode=5&chanWidth=2&channel="+masterChannel+"&rate=71&ap=1&broadcast=2&wdsbrl=2&brlssid="+MASTER_SSID+"&brlbssid=68-02-B8-2C-F1-E6&addrType=1&keytype=4&wepindex=1&authtype=1&keytext="+MASTER_SSID_PASSWORD+"&Save=Save", params={"Page": page})
         
         
         response = "Channel Updated!"

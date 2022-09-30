@@ -24,7 +24,8 @@ class Survey(Fetcher):
 
         siteList = list(extract_vars(doc, [
             "siteList"]).values())
-        
+            
+	       
         print("Master SSID: ",siteList[0][1])
         print("Master Channel: ", siteList[0][3])
 
