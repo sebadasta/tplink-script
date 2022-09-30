@@ -1,10 +1,15 @@
 __pycache__/
 *.py[co]
 
+futureChanges.*
+
 .env/
 .venv/
 env/
 venv/
+.env
+
+futureChanges.txt
 
 *.egg-info/
 build/

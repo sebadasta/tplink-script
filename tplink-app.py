@@ -1,14 +1,17 @@
 #!/usr/bin/env python3
+import os
+from dotenv import load_dotenv
 from tplink_api import fetchers, RouterSession
 
-rt = RouterSession("192.168.0.1", "admin", "admin")
+
+load_dotenv()
+rt = RouterSession(os.getenv("TPLINK_IP"), os.getenv("TPLINK_USER"), os.getenv("TPLINK_PASSWORD"))
 
 #general = fetchers.status.GeneralStatus.fetch(rt)
 #print(general.lan)
 
 #stats = fetchers.wlan.WLANStats.fetch(rt)
 #leases = fetchers.dhcp.DHCPLeases.fetch(rt)
-
 
 wlanset = fetchers.wlansettings.WLANSettings.fetch(rt)
 
