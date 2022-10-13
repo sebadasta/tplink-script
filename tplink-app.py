@@ -2,6 +2,7 @@
 import os
 from dotenv import load_dotenv
 from tplink_api import fetchers, RouterSession
+import datetime
 
 
 load_dotenv()
@@ -30,6 +31,7 @@ pp.pprint(leases.dict())
 
 
 if wlanset != surv:
+  print(datetime.datetime.now().strftime("%c"))
   print("Channels NOT The Same, will update repeater's channel")
   print(fetchers.wlansettings.WLANSettings.syncChannels(rt, surv))
   
