@@ -9,15 +9,15 @@ I have modified the code to be able to update the Channel value whileusing the R
 
 Python API to some budget TP-Link routers.
 
-## Supported devices
+# Supported devices
 
 This library designed for budget models with firmware without API. Library interacts with router management interface like user (scrape HTML UI) so it may not work with others versions of firmware.
 
 Tested with TL-WR841N with firmware version 3.16.9.
 
-## Features
+# Features
 
-Sam as found in tplink-wr-api and have added the abiity to read the "Survey" page and get the channel for the desired SSID, then the script will compare that channel to the one set in the repater.
+Same functions as found in tplink-wr-api but have added the option to read the "Survey" page and get the channel for the desired SSID, then the script will compare that channel to the one set in the repater.
 
-If the channel values don't match the scrit will set the Repeater's channel to the same value that the selected SSID (The SSID that we want to repeat).
+If the channel values don't match the script will set the Repeater's channel to the same value that the selected SSID (The SSID that we want to repeat). A push notification will be sent when this happens
 
