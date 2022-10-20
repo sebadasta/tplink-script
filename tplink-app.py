@@ -9,6 +9,8 @@ import requests
 load_dotenv()
 rt = RouterSession(os.getenv("TPLINK_IP"), os.getenv("TPLINK_USER"), os.getenv("TPLINK_PASSWORD"))
 
+PUSH_APP_KEY = os.getenv("PUSH_APP_KEY")
+PUSH_APP_SECRET = os.getenv("PUSH_APP_SECRET")
 #general = fetchers.status.GeneralStatus.fetch(rt)
 #print(general.lan)
 
@@ -42,7 +44,7 @@ if wlanset != surv:
             "content": "TPLINK Channel Updated!"
             }
 
-    r = requests.post("https://api.pushed.co/1/push", data=payload)
+  r = requests.post("https://api.pushed.co/1/push", data=payload)
   
 else: 
   print("Same Channels. All OK!")
