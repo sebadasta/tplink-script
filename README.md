@@ -19,5 +19,5 @@ Tested with TL-WR841N with firmware version 3.16.9.
 
 Same functions as found in tplink-wr-api but have added the option to read the "Survey" page and get the channel for the desired SSID, then the script will compare that channel to the one set in the repater.
 
-If the channel values don't match the script will set the Repeater's channel to the same value that the selected SSID (The SSID that we want to repeat). A push notification will be sent when this happens
+If the channel values don't match the script will set the Repeater's channel to the same value that the selected SSID (The SSID that we want to repeat).
 
